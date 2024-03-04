@@ -22,3 +22,4 @@ provider "aws" {
 - `terraform apply`実行してyesを入力してEnterで実行
 - `terraform show`で適用済みの全リソースの情報を確認できる
 - `terraform state list`でリソース名のみ確認できる
+- 実際にAWSコンソール画面でec2が作成されていることを確認
