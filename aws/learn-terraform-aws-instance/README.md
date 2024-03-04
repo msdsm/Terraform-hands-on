@@ -15,6 +15,20 @@ provider "aws" {
   profile = "msd_user" # 作成した名前
 }
 ```
+- EC2の部分は以下
+  - IDは`aws_instance.app_server`となる
+  - `resource サービス名 変数名`
+  - tagsでNameを指定するとAWSコンソール画面でec2を一覧表示したときに一番左にあるカラム(Name)に入る
+```terraform
+resource "aws_instance" "app_server" {
+  ami           = "ami-830c94e3"
+  instance_type = "t2.micro"
+
+  tags = {
+    Name = "ExampleAppServerInstance"
+  }
+}
+```
 - `terraform fmt`でコード自動整形
   - VSCodeの拡張機能でも整形してくれる
 - `terraform validate`で構文チェック
