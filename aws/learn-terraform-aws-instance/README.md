@@ -51,3 +51,7 @@ resource "aws_instance" "app_server" {
   - 1 to add, 1 to destoryと表示される
   - 既存のaws_instance.app_serverを削除して新しく作るという意味
 - `terraform apply`で実行
+## リソース削除
+- `terraform destroy`で管理しているリソースすべて削除する
+- 1 to destroyと表示されてec2のaws_instance.app_serverが削除される
+- コンソールを見ると、インスタンスの状態が終了済みになっていた
