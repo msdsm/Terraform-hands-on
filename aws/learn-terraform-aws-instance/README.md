@@ -37,3 +37,17 @@ resource "aws_instance" "app_server" {
 - `terraform show`で適用済みの全リソースの情報を確認できる
 - `terraform state list`でリソース名のみ確認できる
 - 実際にAWSコンソール画面でec2が作成されていることを確認
+
+## EC2変更
+- `main.tf`で以下のようにamiを変更
+```terraform
+ resource "aws_instance" "app_server" {
+-  ami           = "ami-830c94e3"
++  ami           = "ami-08d70e59c07c61a3a"
+   instance_type = "t2.micro"
+ }
+```
+- `terraform plan`で確認
+  - 1 to add, 1 to destoryと表示される
+  - 既存のaws_instance.app_serverを削除して新しく作るという意味
+- `terraform apply`で実行
