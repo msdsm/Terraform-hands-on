@@ -2,7 +2,7 @@
 ## ソース
 - https://developer.hashicorp.com/terraform/tutorials/configuration-language
 ## 進捗
-- [ ] Define infrastructure with Terraform resources
+- [x] Define infrastructure with Terraform resources
 - [ ] Customize Terraform configuration with variables
 - [ ] Protect sensitive input variables
 - [ ] Simplify Terraform configuration with locals
@@ -22,3 +22,5 @@
 - [ ] Use checks to validate infrastructure
 - [ ] Write Terraform Tests
 ## ディレクトリ階層
+- 01-learn-terraform-resources : Define infrastructure with Terraform resources
+  - 01-learn-terraform-resources-original : apache起動
