@@ -1,6 +1,7 @@
 # Define infrastructure with Terraform resources
-- ec2アクセスできない
-- セキュリティグループとか見ても未解決
+- 以下のgithubをcloneするとテトリスできるというもの
+  - https://github.com/hashicorp/learn-terraform-resources/tree/main?tab=MPL-2.0-1-ov-file
+- 動画に従ってcloneしてからsegrity_groupのingress,egress書いたらできた
 ## ファイル説明
 - `terraform.tf`
   - terraformブロックを持つ
@@ -13,8 +14,6 @@
 - `init-script.sh`
   - インスタンスユーザーデータ
   - EC2初回起動時に実行されるスクリプト
-    - apache,mysql,phpのインストールおよび起動
-    - phpで動くゲームをcurlでたたく
   
 ## 自分用メモ
 ### random_pet

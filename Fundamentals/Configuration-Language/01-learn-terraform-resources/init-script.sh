@@ -1,3 +1,4 @@
+#!/bin/bash
 yum update -y
 yum -y remove httpd
 yum -y remove httpd-tools
