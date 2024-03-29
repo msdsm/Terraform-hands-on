@@ -23,4 +23,4 @@
 - [ ] Write Terraform Tests
 ## ディレクトリ階層
 - 01-learn-terraform-resources : Define infrastructure with Terraform resources
-  - 01-learn-terraform-resources-original : apache起動
+- 01-learn-terraform-resources-original : apache起動
