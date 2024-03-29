@@ -3,5 +3,5 @@ output "publicIp" {
 }
 
 output "url" {
-  value = "${aws_instance.myweb.public_ip}/index.html"
+  value = "http://${aws_instance.myweb.public_ip}/index.html"
 }
