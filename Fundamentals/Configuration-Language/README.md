@@ -3,7 +3,7 @@
 - https://developer.hashicorp.com/terraform/tutorials/configuration-language
 ## 進捗
 - [x] Define infrastructure with Terraform resources
-- [ ] Customize Terraform configuration with variables
+- [x] Customize Terraform configuration with variables
 - [ ] Protect sensitive input variables
 - [ ] Simplify Terraform configuration with locals
 - [ ] Output data from Terraform
