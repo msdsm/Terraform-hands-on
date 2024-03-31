@@ -94,12 +94,30 @@ name = "lb-${random_string.lb_id.result}-${var.resource_tags["project"]}-${var.r
 - variableの中にvalidationを定義できる
 - 以下、例
 ```terraform
+variable "resource_tags" {
+  description = "Tags to set for all resources"
+  type        = map(string)
+  default = {
+    project     = "my-project",
+    environment = "dev"
+  }
+
+  validation {
+    condition     = length(var.resource_tags["project"]) <= 16 && length(regexall("[^a-zA-Z0-9-]", var.resource_tags["project"])) == 0
+    error_message = "The project tag must be no more than 16 characters, and only contain letters, numbers, and hyphens."
+  }
+
+  validation {
+    condition     = length(var.resource_tags["environment"]) <= 8 && length(regexall("[^a-zA-Z0-9-]", var.resource_tags["environment"])) == 0
+    error_message = "The environment tag must be no more than 8 characters, and only contain letters, numbers, and hyphens."
+  }
+}
 ```
 - regexall()は正規表現を使って対象文字列から正規表現と一致する部分列を持ってくる
 - 今回は英数字とハイフン以外の文字が対象文字列にあるかどうかチェックしている
 - 以下のように実行すると正しくvalidationにはじかれる
-`terraform apply -var='resource_tags={project="my-project",environment="development"}'`
-Planning failed. Terraform encountered an error while generating this plan
+- `terraform apply -var='resource_tags={project="my-project",environment="development"}'`
+- Planning failed. Terraform encountered an error while generating this plan
 ╷
 │ Error: Invalid value for variable
 │
