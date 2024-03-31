@@ -4,7 +4,7 @@
 ## 進捗
 - [x] Define infrastructure with Terraform resources
 - [x] Customize Terraform configuration with variables
-- [ ] Protect sensitive input variables
+- [x] Protect sensitive input variables
 - [ ] Simplify Terraform configuration with locals
 - [ ] Output data from Terraform
 - [ ] Query data sources
