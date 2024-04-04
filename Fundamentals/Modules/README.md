@@ -3,7 +3,7 @@
 https://developer.hashicorp.com/terraform/tutorials/modules
 ## 進捗
 - [x] Modules overview
-- [ ] Use registry modules in configuration
+- [x] Use registry modules in configuration
 - [ ] Build and use a local module
 - [ ] Customize modules with object attributes
 - [ ] Share modules in the private registry
