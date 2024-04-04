@@ -6,7 +6,7 @@
 - [x] Customize Terraform configuration with variables
 - [x] Protect sensitive input variables
 - [x] Simplify Terraform configuration with locals
-- [ ] Output data from Terraform
+- [x] Output data from Terraform
 - [ ] Query data sources
 - [ ] Create resource dependencies
 - [ ] Manage similar resources with count
