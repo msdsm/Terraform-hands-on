@@ -69,13 +69,22 @@ variable "private_subnet_cidr_blocks" {
   ]
 }
 
+variable "project_name" {
+  description = "Name of the project."
+  type        = string
+  default     = "my-project"
+}
+
+variable "environment" {
+  description = "Name of the environment"
+  type        = string
+  default     = "dev"
+}
+
 variable "resource_tags" {
   description = "Tags to set for all resources"
   type        = map(string)
-  default = {
-    project     = "my-project",
-    environment = "dev"
-  }
+  default     = {}
 }
 
 variable "ec2_instance_type" {

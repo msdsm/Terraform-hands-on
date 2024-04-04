@@ -1,3 +1,14 @@
+locals {
+  name_suffix = "${var.project_name}-${var.environment}"
+
+  required_tags = {
+    project     = var.project_name,
+    environment = var.environment
+  }
+
+  tags = merge(var.resource_tags, local.required_tags)
+}
+
 provider "aws" {
   profile = var.user_name
   region  = var.aws_region
@@ -11,7 +22,7 @@ module "vpc" {
   source  = "terraform-aws-modules/vpc/aws"
   version = "2.64.0"
 
-  name = "vpc-${var.resource_tags["project"]}-${var.resource_tags["environment"]}"
+  name = "vpc-${local.name_suffix}"
   cidr = var.vpc_cidr_block
 
   azs             = data.aws_availability_zones.available.names
@@ -21,33 +32,33 @@ module "vpc" {
   enable_nat_gateway = true
   enable_vpn_gateway = var.enable_vpn_gateway
 
-  tags = var.resource_tags
+  tags = local.tags
 }
 
 module "app_security_group" {
   source  = "terraform-aws-modules/security-group/aws//modules/web"
   version = "3.17.0"
 
-  name        = "web-sg-${var.resource_tags["project"]}-${var.resource_tags["environment"]}"
+  name        = "web-sg-${local.name_suffix}"
   description = "Security group for web-servers with HTTP ports open within VPC"
   vpc_id      = module.vpc.vpc_id
 
   ingress_cidr_blocks = module.vpc.public_subnets_cidr_blocks
 
-  tags = var.resource_tags
+  tags = local.tags
 }
 
 module "lb_security_group" {
   source  = "terraform-aws-modules/security-group/aws//modules/web"
   version = "3.17.0"
 
-  name        = "lb-sg-${var.resource_tags["project"]}-${var.resource_tags["environment"]}"
+  name        = "lb-sg-${local.name_suffix}"
   description = "Security group for load balancer with HTTP ports open within VPC"
   vpc_id      = module.vpc.vpc_id
 
   ingress_cidr_blocks = ["0.0.0.0/0"]
 
-  tags = var.resource_tags
+  tags = local.tags
 }
 
 resource "random_string" "lb_id" {
@@ -60,7 +71,7 @@ module "elb_http" {
   version = "2.4.0"
 
   # Ensure load balancer name is unique
-  name = "lb-${random_string.lb_id.result}-${var.resource_tags["project"]}-${var.resource_tags["environment"]}"
+  name = "lb-${random_string.lb_id.result}-${local.name_suffix}"
 
   internal = false
 
@@ -85,7 +96,7 @@ module "elb_http" {
     timeout             = 5
   }
 
-  tags = var.resource_tags
+  tags = local.tags
 }
 
 data "aws_ami" "amazon_linux" {
@@ -118,5 +129,5 @@ resource "aws_instance" "app" {
     echo "<html><body><div>Hello, world!</div></body></html>" > /var/www/html/index.html
     EOF
 
-  tags = var.resource_tags
+  tags = local.tags
 }
