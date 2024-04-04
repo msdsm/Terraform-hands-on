@@ -1,0 +1,1 @@
+# Simplify Terraform configuration with locals
