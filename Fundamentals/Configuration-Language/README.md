@@ -8,7 +8,7 @@
 - [x] Simplify Terraform configuration with locals
 - [x] Output data from Terraform
 - [ ] Query data sources
-- [ ] Create resource dependencies
+- [x] Create resource dependencies
 - [ ] Manage similar resources with count
 - [ ] Manage similar resources with each
 - [ ] Perform dynamic operations with functions
