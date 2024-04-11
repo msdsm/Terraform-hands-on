@@ -9,7 +9,7 @@
 - [x] Output data from Terraform
 - [ ] Query data sources
 - [x] Create resource dependencies
-- [ ] Manage similar resources with count
+- [x] Manage similar resources with count
 - [ ] Manage similar resources with each
 - [ ] Perform dynamic operations with functions
 - [ ] Create dynamic expressions
