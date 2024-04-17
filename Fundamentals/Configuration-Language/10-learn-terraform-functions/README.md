@@ -70,3 +70,32 @@ resource "aws_instance" "web" {
   associate_public_ip_address = true
 }
 ```
+
+## file function
+- ファイル読み込み
+
+## EC2接続でkeypair指定方法
+- security groupで22あける
+- ssh-keygenコマンドでsshキー作成
+- aws_key_pairリソースで公開鍵ファイル読み込み
+```terraform
+resource "aws_key_pair" "ssh_key" {
+  key_name   = "ssh_key"
+  public_key = file("ssh_key.pub")
+}
+```
+- aws_instanceリソースでkey_nameという引数にaws_key_pairリソースで指定した名前渡す
+```terraform
+resource "aws_instance" "web" {
+  // ami                         = data.aws_ami.ubuntu.id
+  ami                         = lookup(var.aws_amis, var.aws_region)
+  instance_type               = "t2.micro"
+  subnet_id                   = aws_subnet.subnet_public.id
+  vpc_security_group_ids      = [aws_security_group.sg_8080.id, aws_security_group.sg_22.id]
+  associate_public_ip_address = true
+  user_data                   = templatefile("user_data.tftpl", { department = var.user_department, name = var.user_name })
+  key_name                    = aws_key_pair.ssh_key.key_name # これ
+}
+```
+- ssh接続時に秘密鍵ファイルへのパス指定
+- `ssh ubuntu@$(terraform output -raw web_public_ip) -i ssh_key`
