@@ -11,7 +11,7 @@
 - [x] Create resource dependencies
 - [x] Manage similar resources with count
 - [x] Manage similar resources with each
-- [ ] Perform dynamic operations with functions
+- [x] Perform dynamic operations with functions
 - [ ] Create dynamic expressions
 - [ ] Lock and upgrade provider versions
 - [ ] Troubleshoot Terraform
