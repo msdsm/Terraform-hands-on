@@ -33,3 +33,12 @@ variable "user_department" {
   description = "The organization the user belongs to: dev, prod, qa"
   default     = "learn"
 }
+
+variable "aws_amis" {
+  type = map(any)
+  default = {
+    "us-east-1" = "ami-0739f8cdb239fe9ae"
+    "us-west-2" = "ami-008b09448b998a562"
+    "us-east-2" = "ami-0ebc8f6f580a04647"
+  }
+}

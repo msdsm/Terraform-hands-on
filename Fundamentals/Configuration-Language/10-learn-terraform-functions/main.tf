@@ -8,6 +8,7 @@ provider "aws" {
   }
 }
 
+/*
 data "aws_ami" "ubuntu" {
   most_recent = true
 
@@ -29,6 +30,7 @@ resource "aws_vpc" "vpc" {
   enable_dns_support   = true
   enable_dns_hostnames = true
 }
+*/
 
 resource "aws_internet_gateway" "igw" {
   vpc_id = aws_vpc.vpc.id
@@ -73,7 +75,8 @@ resource "aws_security_group" "sg_8080" {
 
 
 resource "aws_instance" "web" {
-  ami                         = data.aws_ami.ubuntu.id
+  // ami                         = data.aws_ami.ubuntu.id
+  ami                         = lookup(var.aws_amis, var.aws_region)
   instance_type               = "t2.micro"
   subnet_id                   = aws_subnet.subnet_public.id
   vpc_security_group_ids      = [aws_security_group.sg_8080.id]

@@ -31,3 +31,42 @@ user_data = templatefile("user_data.tftpl", { department = var.user_department, 
 ```
 - 第一引数にユーザーデータファイル、第二引数にユーザーデータファイルに渡す変数のオブジェクト
 - この変数を渡すときにvariableを参照できるから便利
+
+## lookup function
+- 指定されたキーに対応するマップの値を返す
+  - lookup(map, key, [default])
+- キーがマップに存在しない場合オプションで指定されたデフォルト値を返す
+- デフォルト値が指定されておらず、キーが存在しない場合にエラーが発生する
+```terraform
+variable "example_map" {
+  default = {
+    "a" = "apple"
+    "b" = "banana"
+    "c" = "cherry"
+  }
+}
+
+output "example_lookup" {
+  value = lookup(var.example_map, "b", "default_value")
+}
+```
+- 今回のリソースでは以下のようにAMIで使用
+```terraform
+variable "aws_amis" {
+  type = map
+  default = {
+    "us-east-1" = "ami-0739f8cdb239fe9ae"
+    "us-west-2" = "ami-008b09448b998a562"
+    "us-east-2" = "ami-0ebc8f6f580a04647"
+  }
+}
+
+resource "aws_instance" "web" {
+  // ami                         = data.aws_ami.ubuntu.id
+  ami                         = lookup(var.aws_amis, var.aws_region)
+  instance_type               = "t2.micro"
+  subnet_id                   = aws_subnet.subnet_public.id
+  vpc_security_group_ids      = [aws_security_group.sg_8080.id]
+  associate_public_ip_address = true
+}
+```
