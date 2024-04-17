@@ -77,6 +77,7 @@ resource "aws_instance" "web" {
 ## EC2接続でkeypair指定方法
 - security groupで22あける
 - ssh-keygenコマンドでsshキー作成
+  - `ssh-keygen -C "your_email@example.com" -f ssh_key`
 - aws_key_pairリソースで公開鍵ファイル読み込み
 ```terraform
 resource "aws_key_pair" "ssh_key" {
