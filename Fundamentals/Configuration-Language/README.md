@@ -13,7 +13,7 @@
 - [x] Manage similar resources with each
 - [x] Perform dynamic operations with functions
 - [x] Create dynamic expressions
-- [ ] Lock and upgrade provider versions
+- [x] Lock and upgrade provider versions
 - [ ] Troubleshoot Terraform
 - [ ] Manage Terraform versions
 - [ ] Use configuration to move resources
