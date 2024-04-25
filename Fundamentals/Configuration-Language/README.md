@@ -14,7 +14,7 @@
 - [x] Perform dynamic operations with functions
 - [x] Create dynamic expressions
 - [x] Lock and upgrade provider versions
-- [ ] Troubleshoot Terraform
+- [x] Troubleshoot Terraform
 - [ ] Manage Terraform versions
 - [ ] Use configuration to move resources
 - [ ] Validate modules with custom conditions
