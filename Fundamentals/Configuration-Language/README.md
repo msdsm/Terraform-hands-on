@@ -16,7 +16,7 @@
 - [x] Lock and upgrade provider versions
 - [x] Troubleshoot Terraform
 - [x] Manage Terraform versions
-- [ ] Use configuration to move resources
+- [x] Use configuration to move resources
 - [ ] Validate modules with custom conditions
 - [ ] Customize modules with object attributes
 - [ ] Use checks to validate infrastructure
