@@ -18,7 +18,7 @@
 - [x] Manage Terraform versions
 - [x] Use configuration to move resources
 - [x] Validate modules with custom conditions
-- [ ] Customize modules with object attributes
+- [x] Customize modules with object attributes
 - [ ] Use checks to validate infrastructure
 - [ ] Write Terraform Tests
 ## ディレクトリ階層
