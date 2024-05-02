@@ -16,6 +16,7 @@ variable "tags" {
   default     = {}
 }
 
+/* 削除
 variable "index_document_suffix" {
   description = "Suffix for index documents."
   type        = string
@@ -38,4 +39,29 @@ variable "terraform_managed_files" {
   description = "Flag to indicate whether Terraform should upload files to the bucket."
   type        = bool
   default     = true
+}
+*/
+
+# 追加
+variable "files" {
+  description = "Configuration for website files."
+  type = object({
+    terraform_managed     = bool
+    error_document_key    = optional(string, "error,html")
+    index_document_suffix = optional(string, "index.html")
+    www_path              = optional(string)
+  })
+}
+
+# 追加
+variable "cors_rules" {
+  description = "List of CORS rules."
+  type = list(object({
+    allowed_headers = optional(set(string)),
+    allowed_methods = set(string),
+    allowed_origins = set(string),
+    expose_headers  = optional(set(string)),
+    max_age_seconds = optional(number)
+  }))
+  default = []
 }
