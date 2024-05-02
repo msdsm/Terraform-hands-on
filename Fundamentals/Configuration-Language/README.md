@@ -19,7 +19,7 @@
 - [x] Use configuration to move resources
 - [x] Validate modules with custom conditions
 - [x] Customize modules with object attributes
-- [ ] Use checks to validate infrastructure
+- [x] Use checks to validate infrastructure
 - [ ] Write Terraform Tests
 ## ディレクトリ階層
 - 01-learn-terraform-resources : Define infrastructure with Terraform resources
