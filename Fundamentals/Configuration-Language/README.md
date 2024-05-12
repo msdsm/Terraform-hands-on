@@ -20,7 +20,25 @@
 - [x] Validate modules with custom conditions
 - [x] Customize modules with object attributes
 - [x] Use checks to validate infrastructure
-- [ ] Write Terraform Tests
+- [x] Write Terraform Tests
 ## ディレクトリ階層
-- 01-learn-terraform-resources : Define infrastructure with Terraform resources
-- 01-learn-terraform-resources-original : apache起動(独自)
+- 01-learn-terraform-resources                : Define infrastructure with Terraform resources
+- 01-learn-terraform-resources-original       : apache起動(独自)
+- 02-learn-terraform-variables                : Customize Terraform configuration with variables
+- 03-learn-terraform-sensitive-variables      : Protect sensitive input variables
+- 04-learn-terraform-locals                   : Simplify Terraform configuration with locals
+- 05-learn-terraform-outputs                  : Output data from Terraform
+- 06-learn-terraform-data-sources             : Query data sources
+- 07-learn-terraform-dependencies             : Create resource dependencies
+- 08-learn-terraform-count                    : Manage similar resources with count
+- 09-learn-terraform-for-each                 : Manage similar resources with each
+- 10-learn-terraform-functions                : Perform dynamic operations with functions
+- 11-learn-terraform-expressions              : Create dynamic expressions
+- 12-learn-terraform-provider-versioning      : Lock and upgrade provider versions
+- 13-learn-terraform-troubleshooting          : Troubleshoot Terraform
+- 14-learn-terraform-versions                 : Manage Terraform versions
+- 15-learn-terraform-move                     : Use configuration to move resources
+- 16-learn-terraform-conditions               : Validate modules with custom conditions
+- 17-learn-terraform-module-object-attributes : Customize modules with object attributes
+- 18-learn-terraform-checks                   : Use checks to validate infrastructure
+- 19-learn-terraform-test                     : Write Terraform Tests
