@@ -13,3 +13,51 @@
 - Import Terraform configuration
   - https://developer.hashicorp.com/terraform/tutorials/state/state-import
 
+## 進捗
+- [ ] Get-Started
+  - [ ] aws
+    - [x] What is Infrastructure as Code with Terraform?
+    - [x] Install Terraform
+    - [x] Build infrastructure
+    - [x] Change infrastructure
+    - [x] Destroy infrastructure
+    - [x] Define input variables
+    - [x] Query data with outputs
+    - [ ] Store remote state
+  - [ ] gcp
+- [ ] Fundamentals
+  - [ ] Configuration-Languate
+    - [x] Define infrastructure with Terraform resources
+    - [x] Customize Terraform configuration with variables
+    - [x] Protect sensitive input variables
+    - [x] Simplify Terraform configuration with locals
+    - [x] Output data from Terraform
+    - [ ] Query data sources
+    - [x] Create resource dependencies
+    - [x] Manage similar resources with count
+    - [x] Manage similar resources with each
+    - [x] Perform dynamic operations with functions
+    - [x] Create dynamic expressions
+    - [x] Lock and upgrade provider versions
+    - [x] Troubleshoot Terraform
+    - [x] Manage Terraform versions
+    - [x] Use configuration to move resources
+    - [x] Validate modules with custom conditions
+    - [x] Customize modules with object attributes
+    - [x] Use checks to validate infrastructure
+    - [x] Write Terraform Tests
+  - [ ] Modules
+    - [x] Modules overview
+    - [x] Use registry modules in configuration
+    - [ ] Build and use a local module
+    - [ ] Customize modules with object attributes
+    - [ ] Share modules in the private registry
+    - [ ] Add public providers and modules to your private registry
+    - [ ] Refactor monolithic Terraform configuration
+    - [ ] Module creation recommended pattern
+    - [ ] Use Coniguration to move resources
+    - [ ] Create and use no-code modules
+  - [ ] CLI
+  - [ ] Provision
+  - [ ] State
+  - [ ] Terraform-Cloud
