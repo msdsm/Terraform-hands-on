@@ -5,8 +5,8 @@
 ## 進捗
 - [x] What is Infrastructure as Code with Terraform?
 - [x] Install Terraform
-- [ ] Build infrastructure
-- [ ] Change infrastructure
+- [x] Build infrastructure
+- [x] Change infrastructure
 - [ ] Destroy infrastructure
 - [ ] Define input variables
 - [ ] Query data with outputs
