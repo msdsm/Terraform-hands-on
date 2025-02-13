@@ -7,8 +7,13 @@
 - [x] Install Terraform
 - [x] Build infrastructure
 - [x] Change infrastructure
-- [ ] Destroy infrastructure
-- [ ] Define input variables
-- [ ] Query data with outputs
-## ディレクトリ階層
+- [x] Destroy infrastructure
+- [x] Define input variables
+- [x] Query data with outputs
+
+## ディレクトリ構成
 - gcp
+  - 02-learn-terraform-docker-container : Install Terraform
+  - 03-learn-terraform-gcp : Build Infrastructure
+  - 04-learn-terraform-gcp : Change Infrastructure
+  - 07-learn-terraform-gcp : Query data with outputs
